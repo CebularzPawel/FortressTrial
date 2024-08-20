@@ -1,1 +1,0 @@
-package net.cebularz.morewolfs.client;

@@ -1,12 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.cebularz.morewolfs.mixin",
+  "package": "net.cebularz.fortresstrial.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "morewolfs.refmap.json",
+  "refmap": "fortresstrial.refmap.json",
   "mixins": [
-    "MoreWolfVarsMixin",
-    "VanillaWolfVariant"
   ],
   "client": [
   ],

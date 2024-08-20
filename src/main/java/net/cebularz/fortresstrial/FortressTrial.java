@@ -1,8 +1,7 @@
-package net.cebularz.morewolfs;
+package net.cebularz.fortresstrial;
 
 import com.mojang.logging.LogUtils;
-import net.cebularz.morewolfs.client.renderer.ModWolfRenderer;
-import net.minecraft.world.entity.EntityType;
+import net.cebularz.fortresstrial.item.FortressTrialItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,18 +15,19 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-@Mod(MoreWolfs.MOD_ID)
-public class MoreWolfs
+@Mod(FortressTrial.MOD_ID)
+public class FortressTrial
 {
-    public static final String MOD_ID = "morewolfs";
+    public static final String MOD_ID = "fortresstrial";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public MoreWolfs()
+    public FortressTrial()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
+        FortressTrialItems.register(modEventBus);
 
     }
 
@@ -62,7 +62,6 @@ public class MoreWolfs
         @SubscribeEvent
         public static void registerEntityRenderer(EntityRenderersEvent.RegisterRenderers event)
         {
-            event.registerEntityRenderer(EntityType.WOLF, ModWolfRenderer::new);
         }
     }
 }
